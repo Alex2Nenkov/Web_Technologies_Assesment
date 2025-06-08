@@ -72,5 +72,38 @@
         <button type="submit">Send Message</button>
       </form>
     </div>
+    <script>
+      const form = document.querySelector(".contact-form");
+      const result = document.querySelector(".form-result");
+
+      result.innerHTML = "";
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch("/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+
+          if (response.ok) {
+            result.textContent = "Message sent successfully!";
+            form.reset();
+          } else {
+            result.textContent = "Failed to send message. Please try again.";
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          result.textContent = "An error occurred. Please try again later.";
+        }
+      });
+    </script>
   </body>
 </html>
