@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-app.get("/home", (req, res) => {
+app.get("/", (req, res) => {
   res.render("pages/home", {
     title: "Spill Studies - Online Learning Platform",
   });
