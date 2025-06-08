@@ -1,9 +1,9 @@
 const express = require("express");
 const path = require("path");
-const db = require("./db");
+const db = require("./db/db.js");
 
 const app = express();
-const port = 3000;
+const port = 5000;
 
 app.use(express.static("public"));
 app.use(express.json());
@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-app.get("/", (req, res) => {
+app.get("/home", (req, res) => {
   res.render("pages/home", {
     title: "Spill Studies - Online Learning Platform",
   });
