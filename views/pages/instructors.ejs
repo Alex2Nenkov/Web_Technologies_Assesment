@@ -1,12 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SpillStudies</title>
-    <link rel="stylesheet" href="/styles/style.css" />
-  </head>
-  <body>
-    <%- include("../partials/header") %>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instructors | SpillStudies</title>
+  <link rel="stylesheet" href="/styles/style.css" />
+  <style>
+    body {
+      background-color: #f3e5d0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #5d4037;
+      margin-top: 2rem;
+    }
+
+    .instructors-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+      perspective: 1000px;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 100%;
+      height: 360px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .flip-card-front {
+      background-color: #d7ccc8;
+      color: #3e2723;
+    }
+
+    .flip-card-back {
+      background-color: #8d6e63;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .flip-card-front h2,
+    .flip-card-back h2 {
+      margin: 0.5rem 0;
+      font-family: 'Georgia', serif;
+    }
+
+    .flip-card-back p {
+      font-size: 0.95rem;
+      margin: 0.5rem 0;
+      max-width: 90%;
+    }
+  </style>
+</head>
+<body>
+  <%- include("../partials/header") %>
+
+  <h1>Meet Our Instructors</h1>
+
+  <div class="instructors-container">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="/images/professor 1.jpg" alt="" />
+          <h2>Will Barry</h2>
+          <p>Web Development</p>
+        </div>
+        <div class="flip-card-back">
+          <h2>Will Barry</h2>
+          <p>Over 10 years of full-stack experience. Passionate about mentoring new developers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="/images/professor 2.jpg" alt="" />
+          <h2>Dasha Homry</h2>
+          <p>Data Science</p>
+        </div>
+        <div class="flip-card-back">
+          <h2>Dasha Homry</h2>
+          <p>Specializes in machine learning and Python. Loves simplifying complex topics.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="/images/professor 3.jpg" alt="" />
+          <h2>Bogdan Lindu</h2>
+          <p>Creative Writing</p>
+        </div>
+        <div class="flip-card-back">
+          <h2>Bogdan Lindu</h2>
+          <p>Published author and creative coach. Helps students express their unique voice.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="/images/instructor 4.jpg" alt="Alan Reyes" />
+          <h2>Alan Reyes</h2>
+          <p>Mathematics</p>
+        </div>
+        <div class="flip-card-back">
+          <h2>Alan Reyes</h2>
+          <p>Experienced in teaching high school and college-level math. Encourages logical thinking.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="/images/instructor 5.jpg" alt="Sofia Lim" />
+          <h2>Sofia Lime</h2>
+          <p>Art & Design</p>
+        </div>
+        <div class="flip-card-back">
+          <h2>Sofia Lime</h2>
+          <p>Graphic designer and art instructor. Teaches digital illustration and creativity techniques.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>

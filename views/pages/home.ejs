@@ -5,32 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SpillStudies</title>
     <link rel="stylesheet" href="/styles/style.css" />
+    <style>
+      body {
+        background-color: #f3e5d0; /* light brownish background */
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .hero {
+        background: linear-gradient(to right, #8d6e63, #a1887f); /* warm browns */
+        color: white;
+        padding: 4rem 2rem;
+        text-align: center;
+        border-radius: 12px;
+        margin: 2rem auto;
+        max-width: 900px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-family: 'Georgia', serif;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .sessions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .session-card {
+        background-color: #fff8f0;
+        border: 1px solid #e0cfc2;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+        max-width: 300px;
+        text-align: center;
+        transition: transform 0.2s ease;
+      }
+
+      .session-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .session-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .session-card h2 {
+        font-family: 'Cambria', serif;
+        margin: 1rem 0 0.5rem;
+        color: #5d4037;
+      }
+
+      .session-card p {
+        color: #4e342e;
+        padding: 0 1rem 1rem;
+      }
+
+      h2 {
+        text-align: center;
+        color: #6d4c41;
+      }
+    </style>
   </head>
   <body>
     <%- include("../partials/header") %>
+
     <main class="container">
-      <h2>Live Sessions this week:</h2>
-      <div>
-        <img src="/images/example_1.png" alt="" />
-        <h1
-          style="
-            position: relative;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman',
-              serif;
-          "
-        >
-          PASSION!
-        </h1>
-        <p
-          style="
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: blanchedalmond;
-          "
-        >
-          Our teachers have a passion for teaching the next generation and are
-          all well educated in their respective studies.
-        </p>
-      </div>
+      <!-- Hero Banner -->
+      <section class="hero">
+        <h1>Welcome to SpillStudies</h1>
+        <p>Empowering learners with engaging, expert-led online sessions tailored for success.</p>
+      </section>
+
+      <!-- Live Sessions -->
+      <section>
+        <h2>Live Sessions This Week</h2>
+        <div class="sessions">
+          <div class="session-card">
+            <img src="/images/example_1.png" alt="Live Session" />
+            <h2>Linear Algebra!</h2>
+            <p>Alan is going over Unit 3: Linear Algebra at 15:00pm On Tuesday 10/06/2025.</p>
+          </div>
+          <!-- Add more session cards here -->
+        </div>
+      </section>
     </main>
   </body>
 </html>

@@ -3,12 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SpillStudies</title>
+    <title>Courses | SpillStudies</title>
     <link rel="stylesheet" href="/styles/style.css" />
+    <style>
+      body {
+        background-color: #f3e5d0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0 1rem;
+      }
+
+      h1 {
+        text-align: center;
+        color: #5d4037;
+        margin-top: 2rem;
+      }
+
+      .courses-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin: 2rem auto;
+        max-width: 1200px;
+      }
+
+      .course-card {
+        background-color: #d7ccc8; /* soft brown */
+        border-radius: 10px;
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.2s ease;
+      }
+
+      .course-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .course-card img {
+        width: 100%;
+        max-width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+      }
+
+      .course-card h2 {
+        margin: 0.5rem 0;
+        color: #4e342e;
+        font-family: 'Georgia', serif;
+      }
+
+      .course-card p {
+        color: #3e2723;
+        margin: 0.3rem 0;
+      }
+
+      .learn-more {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background-color: #8d6e63;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .learn-more:hover {
+        background-color: #6d4c41;
+      }
+    </style>
   </head>
   <body>
     <%- include("../partials/header") %>
-<p>The following are our available courses</p>
-    <Table> </Table>
+
+    <h1>Our Courses</h1>
+
+    <div class="courses-container">
+      <div class="course-card">
+        <img src="/images/web technologies.jpg" alt="Web Development" />
+        <h2>Web Development</h2>
+        <p><strong>Duration:</strong> 4 weeks</p>
+        <p><strong>Level:</strong> Beginner</p>
+        <p>Learn how to build beautiful and functional websites using HTML, CSS, and JavaScript.</p>
+        <a href="#" class="learn-more">Learn More</a>
+      </div>
+
+      <div class="course-card">
+        <img src="/images/data.jpg" alt="Data Science" />
+        <h2>Data Science Essentials</h2>
+        <p><strong>Duration:</strong> 6 weeks</p>
+        <p><strong>Level:</strong> Intermediate</p>
+        <p>Explore data analysis, Python programming, and real-world problem-solving with datasets.</p>
+        <a href="#" class="learn-more">Learn More</a>
+      </div>
+
+      <div class="course-card">
+        <img src="images/creative writing..jpg" alt="Creative Writing" />
+        <h2>Creative Writing</h2>
+        <p><strong>Duration:</strong> 3 weeks</p>
+        <p><strong>Level:</strong> All Levels</p>
+        <p>Enhance your storytelling and writing skills with structured lessons and feedback.</p>
+        <a href="#" class="learn-more">Learn More</a>
+      </div>
+    </div>
   </body>
 </html>
