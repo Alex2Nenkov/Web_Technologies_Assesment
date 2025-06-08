@@ -6,7 +6,6 @@
     <title>SpillStudies - FAQ</title>
     <link rel="stylesheet" href="/styles/style.css" />
     <style>
-      /* FAQ Page Styles */
       body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         line-height: 1.6;
@@ -69,22 +68,7 @@
       }
       
       .faq-answer p {
-        margin: 0 0 15px 0;
-      }
-      
-      .learn-more-btn {
-        display: inline-block;
-        padding: 8px 16px;
-        background-color: #a1887f;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        font-size: 0.9rem;
-        transition: background-color 0.3s;
-      }
-      
-      .learn-more-btn:hover {
-        background-color: #8d6e63;
+        margin: 0;
       }
       
       .faq-item.active .faq-answer {
@@ -115,8 +99,7 @@
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer">
-          <p>To sign up for courses, simply create an account on our platform, browse our course catalog, and click the "Enroll" button on any course you're interested in.</p>
-          <a href="/courses" class="learn-more-btn">Learn More About Courses</a>
+          <p>Browse our course catalog, and click "Learn more" on any course. For detailed course information and you can enroll from there.</p>
         </div>
       </div>
       
@@ -126,8 +109,7 @@
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer">
-          <p>Yes! SpillStudies is fully responsive and works on smartphones, tablets, and desktop computers. You can also download our mobile app.</p>
-          <a href="/mobile-app" class="learn-more-btn">Learn About Mobile Access</a>
+          <p>Yes! SpillStudies is fully responsive and works on all devices. Check individual course pages (using "Learn More") to see any specific mobile requirements.</p>
         </div>
       </div>
       
@@ -137,8 +119,7 @@
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer">
-          <p>Yes, most courses offer a certificate of completion. To earn a certificate, you typically need to complete all course modules and pass any required assessments.</p>
-          <a href="/certificates" class="learn-more-btn">Learn About Certificates</a>
+          <p>Most courses offer certificates. You can find certification details on each course's page by clicking "Learn More" in our course catalog.</p>
         </div>
       </div>
       
@@ -148,8 +129,7 @@
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer">
-          <p>Each course has a discussion forum where you can post questions for instructors or other students. Some courses also offer live Q&A sessions.</p>
-          <a href="/instructor-support" class="learn-more-btn">Learn About Support</a>
+          <p>Using the instructors page, you can get information on any of the instructors and then you may join their live sessions or use the contact form in Contact page.</p>
         </div>
       </div>
       
@@ -159,8 +139,7 @@
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer">
-          <p>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and in some regions, mobile payment options.</p>
-          <a href="/payments" class="learn-more-btn">Learn About Payments</a>
+          <p>We accept major credit cards and PayPal.</p>
         </div>
       </div>
       
@@ -170,14 +149,12 @@
           <span class="faq-toggle">+</span>
         </div>
         <div class="faq-answer">
-          <p>We offer a 30-day money-back guarantee for all paid courses. If you're not satisfied, you can request a refund through your account dashboard.</p>
-          <a href="/refund-policy" class="learn-more-btn">Learn About Refunds</a>
+          <p>We offer a 30-day money-back guarantee. Refund policies for specific courses may vary.</p>
         </div>
       </div>
     </div>
     
     <script>
-      // Add interactive functionality to the FAQ
       document.querySelectorAll('.faq-question').forEach(question => {
         question.addEventListener('click', () => {
           const item = question.parentNode;
