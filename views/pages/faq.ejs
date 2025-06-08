@@ -3,10 +3,194 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SpillStudies</title>
+    <title>SpillStudies - FAQ</title>
     <link rel="stylesheet" href="/styles/style.css" />
+    <style>
+      /* FAQ Page Styles */
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        background-color: #faf6f2;
+      }
+      
+      .faq-container {
+        margin: 40px 0;
+      }
+      
+      .faq-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      
+      .faq-header h1 {
+        font-size: 2.5rem;
+        color: #5d4037;
+        margin-bottom: 10px;
+      }
+      
+      .faq-header p {
+        color: #8d6e63;
+        font-size: 1.1rem;
+      }
+      
+      .faq-item {
+        background: #efebe9;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        border-left: 4px solid #d7ccc8;
+      }
+      
+      .faq-question {
+        padding: 20px;
+        background: #8d6e63;
+        color: white;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 1.1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .faq-question:hover {
+        background: #6d4c41;
+      }
+      
+      .faq-answer {
+        padding: 20px;
+        display: none;
+        background: white;
+      }
+      
+      .faq-answer p {
+        margin: 0 0 15px 0;
+      }
+      
+      .learn-more-btn {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #a1887f;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        transition: background-color 0.3s;
+      }
+      
+      .learn-more-btn:hover {
+        background-color: #8d6e63;
+      }
+      
+      .faq-item.active .faq-answer {
+        display: block;
+      }
+      
+      .faq-item.active .faq-question {
+        background: #6d4c41;
+      }
+      
+      .faq-toggle {
+        font-size: 1.5rem;
+      }
+    </style>
   </head>
   <body>
     <%- include("../partials/header") %>
+    
+    <div class="faq-container">
+      <div class="faq-header">
+        <h1>Frequently Asked Questions</h1>
+        <p>Find answers to common questions about SpillStudies online learning platform</p>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do I sign up for courses on SpillStudies?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>To sign up for courses, simply create an account on our platform, browse our course catalog, and click the "Enroll" button on any course you're interested in.</p>
+          <a href="/courses" class="learn-more-btn">Learn More About Courses</a>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I access courses on mobile devices?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes! SpillStudies is fully responsive and works on smartphones, tablets, and desktop computers. You can also download our mobile app.</p>
+          <a href="/mobile-app" class="learn-more-btn">Learn About Mobile Access</a>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Are certificates provided upon course completion?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Yes, most courses offer a certificate of completion. To earn a certificate, you typically need to complete all course modules and pass any required assessments.</p>
+          <a href="/certificates" class="learn-more-btn">Learn About Certificates</a>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do I contact instructors if I have questions?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Each course has a discussion forum where you can post questions for instructors or other students. Some courses also offer live Q&A sessions.</p>
+          <a href="/instructor-support" class="learn-more-btn">Learn About Support</a>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What payment methods do you accept?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and in some regions, mobile payment options.</p>
+          <a href="/payments" class="learn-more-btn">Learn About Payments</a>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Can I get a refund if I'm not satisfied with a course?</span>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>We offer a 30-day money-back guarantee for all paid courses. If you're not satisfied, you can request a refund through your account dashboard.</p>
+          <a href="/refund-policy" class="learn-more-btn">Learn About Refunds</a>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Add interactive functionality to the FAQ
+      document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+          const item = question.parentNode;
+          item.classList.toggle('active');
+          
+          const toggle = question.querySelector('.faq-toggle');
+          if (item.classList.contains('active')) {
+            toggle.textContent = '-';
+          } else {
+            toggle.textContent = '+';
+          }
+        });
+      });
+    </script>
   </body>
 </html>
