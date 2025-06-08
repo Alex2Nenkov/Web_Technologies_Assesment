@@ -45,14 +45,14 @@ app.post("/contact", async (req, res) => {
     return res.status(400).send("All fields are required.");
   }
 
-  try {
+   try {
     await new Promise((resolve, reject) => {
       const query = "INSERT INTO contact (name, email, message) VALUES (?, ?, ?)";
-      db.query(query, [name, email, message], (err, results) => {
+      db.run(query, [name, email, message], function (err) {
         if (err) {
           reject(err);
         } else {
-          resolve(results);
+          resolve(this);
         }
       });
     });
