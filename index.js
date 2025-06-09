@@ -47,7 +47,7 @@ app.post("/contact", async (req, res) => {
 
    try {
     await new Promise((resolve, reject) => {
-      const query = "INSERT INTO contact (name, email, message) VALUES (?, ?, ?)";
+      const query = "INSERT INTO messages (name, email, message) VALUES (?, ?, ?)";
       db.run(query, [name, email, message], function (err) {
         if (err) {
           reject(err);
